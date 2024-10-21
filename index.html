@@ -3,11 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./style.css"/>
     <title>John's Profile</title>
 </head>
 <body>
-    <header>This is a header</header>
-    <h1>John's Personal Profile</h1>
-    
+    <header>
+        <h1>John's Personal Profile</h1>
+        <h2>Java Developer</h2>
+        <!-- Dropdown Menu -->
+        <div class="dropdown">
+            <button class="dropdown-toggle">⋮</button>
+            <div class="dropdown-content">
+                <a href="#" id="theme-toggle">Toggle Light/Dark Mode</a>
+                <!-- Add more future functions here -->
+                <a href="#">Another Function</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#references">References</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm John Mudryk, a passionate Java Developer specializing in backend systems. I have a keen interest in open-source projects and creating clean, efficient code.</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>Projects</h2>
+        <p>Here are some of my recent projects. Feel free to check them out on GitHub!</p>
+        <!-- Example Project -->
+        <div class="project">
+            <h3>Project Title</h3>
+            <p>Short description of the project.</p>
+            <a href="https://github.com/yourusername/project" class="btn">View on GitHub</a>
+        </div>
+        <!-- Repeat for more projects -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>John Mudryk<br>Email: <a href="mailto:john@lasers.org">john@lasers.org</a></p>
+    </section>
+
+    <!-- References Section -->
+    <section id="references">
+        <h2>References</h2>
+        <p>This is a reference 1</p>
+        <p>This is a reference 2</p>
+        <p>This is a reference 3</p>
+    </section>
+
+    <footer>
+        <p>© 2024 John Mudryk</p>
+        <a href="mailto:john@lasers.org">Email</a>
+    </footer>
+
+    <script src="./script.js"></script>
 </body>
 </html>
