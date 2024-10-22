@@ -1,4 +1,8 @@
-/* General Body and Text */
+/* ========== Global Styles ========== */
+:root {
+    --animation-duration: 0.3s;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #121212; /* Dark background */
@@ -8,7 +12,38 @@ body {
     font-size: 16px; /* Set base font size to 16px */
 }
 
-/* Header Styling */
+a {
+    color: #ce8062; /* Accent color for links */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #f7580e; /* Highlight color on hover */
+    text-decoration: underline;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #a666b9; /* Accent color */
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color var(--animation-duration) ease;
+}
+
+.btn:hover {
+    background-color: #660066; /* Darker shade on hover */
+}
+
+strong {
+    color: rgb(231, 231, 231);
+}
+
+/* ========== Header Styling ========== */
 header {
     background-color: #1e1e1e; /* Slightly lighter dark */
     color: #fff; /* White text */
@@ -22,30 +57,34 @@ header h1 {
     margin: 0;
 }
 
-/* Navigation Styling */
+/* ========== Navigation Styling ========== */
 nav {
     background-color: #333; /* Darker navigation bar */
     padding: 0.625rem 0; /* 10px */
+    position: sticky;
+    top: 0; /* Sticks to the top of the viewport */
+    z-index: 999; /* Keeps nav above other content */
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    text-align: center;
     margin: 0;
     display: flex;
     justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 0.9375rem; /* 15px */
+    margin: 0.2rem 1rem; /* 24px */
 }
 
 nav ul li a {
     color: #e0e0e0; /* Light text for links */
     text-decoration: none;
-    padding: 0.3125rem 0.625rem; /* 5px 10px */
+    padding: 0.5rem 0.625rem; /* 8px 10px */
     border-radius: 0.3125rem; /* 5px */
     transition: background-color 0.3s ease;
 }
@@ -55,7 +94,7 @@ nav ul li a:hover {
     color: #121212; /* Dark text on hover */
 }
 
-/* Section and General Content Styling */
+/* ========== Section Styling ========== */
 section {
     padding: 2.5rem; /* 40px */
     padding-top: 5rem; /* Additional top padding */
@@ -64,7 +103,11 @@ section {
     margin-bottom: 1.25rem; /* 20px */
 }
 
-/* Styling for Images */
+.skills-list {
+    text-align: left;
+}
+
+/* ========== Image Styling ========== */
 #picture1 {
     border: 0.125rem solid #444; /* 2px */
     margin: 1.25rem; /* 20px */
@@ -72,63 +115,20 @@ section {
     background-color: #2a2a2a;
 }
 
-/* Footer Styling */
+/* ========== Footer Styling ========== */
 footer {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-    padding: 1.25rem; /* 20px */
-    text-align: center;
-}
-
-footer a {
-    color: #FF6600; /* Use accent color for links */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
-
-/* Reference Section */
-.reference {
-    padding: 0.625rem; /* 10px */
-    margin: 0.625rem 0; /* 10px 0 */
-    text-align: center;
-    background-color: #2a2a2a; /* Slightly lighter to separate content */
-}
-
-/* Light Mode */
-body.light-mode {
-    background-color: #f5f5f5;
-    color: #333;
-}
-
-body.light-mode header {
-    background-color: #e0e0e0;
-}
-
-body.light-mode nav {
-    background-color: #d3d3d3;
-}
-
-body.light-mode nav ul li a {
-    color: #333;
-}
-
-body.light-mode nav ul li a:hover {
     background-color: #333;
-    color: #fff;
+    color: #e0e0e0;
+    padding: 0.25rem; /* 4px */
+    text-align: center;
+    position: sticky;
+    bottom: 0;
 }
 
-body.light-mode footer {
-    background-color: #e0e0e0;
-    color: #333;
-}
-
-/* Dropdown Menu Styling */
+/* ========== Dropdown Menu Styling ========== */
 .dropdown {
     position: absolute;
-    top: 0.625rem; /* 10px */
+    top: 0.25rem; /* 8px */
     right: 0.625rem; /* 10px */
 }
 
@@ -155,7 +155,7 @@ body.light-mode footer {
 
 .dropdown-content a {
     color: #e0e0e0; /* Light text */
-    padding: 0.625rem 0.9375rem; /* 10px 15px */
+    padding: 0.625rem 1rem; /* 10px 16px */
     text-decoration: none;
     display: block;
     transition: background-color 0.3s ease;
@@ -171,4 +171,170 @@ body.light-mode footer {
     display: block;
 }
 
+/* ========== Light Mode Styling ========== */
+body.light-mode {
+    background-color: #b9b9b9;
+    color: #333;
+}
 
+body.light-mode header {
+    background-color: #e0e0e0;
+}
+
+body.light-mode h1 {
+    background-color: #acacac;
+    color: #333;
+}
+
+body.light-mode h2 {
+    color: #333;
+}
+
+body.light-mode section {
+    background-color: #d3d3d3;
+    color: #333;
+}
+
+body.light-mode a {
+    color: #b744ec;
+    text-decoration: none;
+}
+
+body.light-mode a:hover {
+    color: #920692; /* Highlight color on hover */
+    text-decoration: underline;
+}
+
+body.light-mode nav {
+    background-color: #acacac;
+}
+
+body.light-mode nav ul li a {
+    color: #333;
+}
+
+body.light-mode nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode footer {
+    background-color: #acacac;
+    color: #333;
+}
+
+body.light-mode .dropdown-toggle {
+    color: #e0e0e0;
+    background-color: #7e7e7e;
+}
+
+body.light-mode .dropdown-content {
+    background-color: #d3d3d3; /* Light background for dropdown */
+}
+
+body.light-mode .dropdown-content a {
+    color: #333; /* Dark text for links */
+}
+
+body.light-mode .dropdown-content a:hover {
+    background-color: #333; /* Darker background on hover */
+    color: #fff; /* White text on hover */
+}
+
+body.light-mode #hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('your-photo.jpg') center/cover no-repeat;
+    color: #333; /* Dark text for contrast */
+}
+
+body.light-mode .hero-image {
+    filter: brightness(1.2); /* Lighten the image for better readability in light mode */
+}
+
+body.light-mode .btn {
+    background-color: #ff8838; /* Darker button background for light mode */
+    color: #fff;
+}
+
+body.light-mode .btn:hover {
+    background-color: rgb(163, 75, 23); /* Slightly lighter shade on hover */
+    color: #c7c7c7;
+}
+
+body.light-mode .level {
+    background-color: #c469c4;;
+}
+
+/* ========== Hero Section Styling ========== */
+#hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 3rem 1rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-photo.jpg') center/cover no-repeat;
+    height: 60vh; /* Adjust the height as needed */
+    color: #ffffff; /* White text for contrast */
+    overflow: hidden;
+    height: 80vh;
+    min-height: 400px;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7); /* Slightly darken image for text readability */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Ensure the image stays behind the text */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1; /* Keeps content above the image */
+}
+
+.hero-content h2 {
+    font-size: 2.5rem; /* Larger font for headlines */
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.25rem; /* Slightly larger for readability */
+    margin-bottom: 2rem;
+}
+
+/*==================== Skill Bar Container =================== */
+.skill-bar {
+    margin: 15px 0;
+}
+
+.skill-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* Outer Bar */
+.bar {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    height: 25px;
+}
+
+/* Inner Level Bar */
+.level {
+    background-color: #FF6600; /* Change to match your theme */
+    height: 100%;
+    line-height: 25px;
+    color: #fff;
+    text-align: right;
+    padding-right: 10px;
+    border-radius: 5px;
+    transition: width 1s ease; /* Smooth animation effect */
+}
+
+/* ========== Miscellaneous Styling ========== */

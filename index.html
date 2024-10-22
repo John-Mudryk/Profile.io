@@ -4,68 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./style.css"/>
-    <title>John's Profile</title>
+    <title>John Mudryk - Java Developer</title>
 </head>
 <body>
     <header>
-        <h1>John's Personal Profile</h1>
+        <h1>John Mudryk</h1>
         <h2>Java Developer</h2>
-        <!-- Dropdown Menu -->
-        <div class="dropdown">
-            <button class="dropdown-toggle">⋮</button>
-            <div class="dropdown-content">
-                <a href="#" id="theme-toggle">Toggle Light/Dark Mode</a>
-                <!-- Add more future functions here -->
-                <a href="#">Another Function</a>
-            </div>
-        </div>
     </header>
 
     <nav>
         <ul>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="#references">References</a></li>
         </ul>
+        <div class="dropdown">
+            <button class="dropdown-toggle" aria-label="More Options">⚙️</button>
+            <div class="dropdown-content">
+                <a href="#" id="theme-toggle">Toggle Light/Dark Mode</a>
+            </div>
+        </div>
     </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <img src="assets/Hero Picture.png" alt="John Mudryk" class="hero-image">
+        <div class="hero-content">
+            <h2>Hi, I'm John Mudryk,</h2>
+            <p>a passionate new Java Developer entering into the world of programming.</p>
+            <a href="https://github.com/John-Mudryk" class="btn">View My GitHub</a> |
+            <a href="https://www.linkedin.com/in/john-mudryk/" class="btn">Connect on LinkedIn</a>
+        </div>
+    </section>
 
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p>Hi, I'm John Mudryk, a passionate Java Developer specializing in backend systems. I have a keen interest in open-source projects and creating clean, efficient code.</p>
+        <p>Hi, I'm <strong>John Mudryk</strong>, a passionate <strong>Junior Developer</strong> with a love for coding that began at an early age. I first discovered programming through <strong>block coding on Scratch</strong> and quickly realized how much I enjoyed creating and problem-solving. My journey continued in <strong>high school</strong>, where I took several <strong>introductory programming classes</strong> and a <strong>computer science course</strong> that deepened my understanding of software development.</p>
+        <p>After high school, I began exploring more advanced programming by <strong>helping friends develop content for the video game Garry's Mod</strong>. This experience, which involved setting up servers and creating mods, taught me the practical side of coding and fueled my enthusiasm for game development and software engineering.</p>
+        <p>Currently, I'm honing my skills through the <strong>We Can Code It bootcamp</strong>, where I’m completing modules in <strong>software development</strong>. I've earned multiple smaller certifications, and I’m excited to keep building my expertise by taking on new projects that challenge me to grow as a developer.</p>
+        <p>In my free time, I enjoy <strong>continuing development for the GMod server</strong> I help with and <strong>immersing myself in fantasy stories</strong>. My goal is to become a <strong>full-stack developer</strong> who can build scalable, efficient web applications, and eventually <strong>transition into game development</strong>. I'm currently expanding my knowledge in <strong>front-end development</strong> to round out my skill set.</p>
     </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <div class="skill-bar">
+            <span class="skill-title">Java</span>
+            <div class="bar">
+                <div class="level" style="width: 60%;">60%</div>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-title">JavaScript</span>
+            <div class="bar">
+                <div class="level" style="width: 50%;">50%</div>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-title">CSS</span>
+            <div class="bar">
+                <div class="level" style="width: 75%;">75%</div>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-title">HTML</span>
+            <div class="bar">
+                <div class="level" style="width: 70%;">70%</div>
+            </div>
+        </div>
+        <div class="skill-bar">
+            <span class="skill-title">Lua</span>
+            <div class="bar">
+                <div class="level" style="width: 40%;">40%</div>
+            </div>
+        </div>
+    </section>
+    
 
     <!-- Projects Section -->
     <section id="projects">
         <h2>Projects</h2>
-        <p>Here are some of my recent projects. Feel free to check them out on GitHub!</p>
-        <!-- Example Project -->
         <div class="project">
-            <h3>Project Title</h3>
-            <p>Short description of the project.</p>
-            <a href="https://github.com/yourusername/project" class="btn">View on GitHub</a>
+            <h3>Donut Maker</h3>
+            <p>Emulating the popular Cookie Clicker game using HTML, CSS, and JavaScript. Developed as part of a client project to learn and showcase dynamic content updates.</p>
+            <a href="https://github.com/John-Mudryk/donut-maker" class="btn">View on GitHub</a>
         </div>
-        <!-- Repeat for more projects -->
+        <!-- Add More Projects Here -->
     </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <h2>Education</h2>
+        <h3>Associates of Science, Cuyahoga Community College</h3>
+        <p>Relevant Courses: Technical Writing, Visual Communication Foundation</p>
+        <h3>High School Diploma, Westlake High School</h3>
+        <p>Relevant Courses: Technical Drawing and Design, AP Computer Science, </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2>Experience</h2>
+        <div class="job">
+            <h3>Utility Clerk - Giant Eagle</h3>
+            <p>Responsible for maintaining store cleanliness, assisting customers, and organizing tasks efficiently. Developed strong time management and problem-solving skills by balancing multiple tasks in a fast-paced environment.</p>
+            <p><strong>Skills:</strong> Time Management, Strong Work Ethic, Communication, Problem Solving</p>
+        </div>
+    </section>
+
+        <!-- Achievements Section -->
+        <section id="certifications">
+            <h2>Achievements</h2>
+            <h3>Associates of Science, Cuyahoga Community College</h3>
+            <p>Relevant Courses: Technical Writing, Visual Communication Foundation</p>
+            <h3>High School Diploma, Westlake High School</h3>
+            <p>Relevant Courses: Technical Drawing and Design, AP Computer Science, </p>
+        </section>
 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
-        <p>John Mudryk<br>Email: <a href="mailto:john@lasers.org">john@lasers.org</a></p>
-    </section>
-
-    <!-- References Section -->
-    <section id="references">
-        <h2>References</h2>
-        <p>This is a reference 1</p>
-        <p>This is a reference 2</p>
-        <p>This is a reference 3</p>
+        <p>Feel free to reach out to me for collaboration or networking opportunities!</p>
+        <p>Email: <a href="mailto:john@lasers.org">john@lasers.org</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/john-mudryk/">/in/john-mudryk/</a></p>
     </section>
 
     <footer>
-        <p>© 2024 John Mudryk</p>
-        <a href="mailto:john@lasers.org">Email</a>
+        <p>© 2024 John Mudryk | <a class="" href="mailto:john@lasers.org">Email</a> | <a href="https://github.com/John-Mudryk">GitHub</a> | <a href="https://www.linkedin.com/in/john-mudryk/">LinkedIn</a></p>
     </footer>
 
     <script src="./script.js"></script>
