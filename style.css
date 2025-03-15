@@ -15,11 +15,24 @@ body {
 a {
     color: #ce8062; /* Accent color for links */
     text-decoration: none;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 a:hover {
     color: #f7580e; /* Highlight color on hover */
     text-decoration: underline;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+ul {
+    text-align: left; /* Ensures the text aligns with the bullets */
+    padding-left: 2rem; /* Adds indentation to the list for better readability */
+    margin-bottom: 1rem;
+    line-height: 1.6; /* Improves readability */
+}
+
+ul li {
+    margin-bottom: 0.5rem; /* Adds spacing between items */
 }
 
 .btn {
@@ -38,6 +51,7 @@ a:hover {
 .btn:hover {
     background-color: #660066; /* Darker shade on hover */
     color: #888888;
+    text-decoration: none;
 }
 
 strong {
@@ -97,6 +111,7 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #9e6394; /* Purple hover effect */
+    text-decoration: none;
     color: #121212; /* Dark text on hover */
 }
 
@@ -175,103 +190,6 @@ footer {
     display: block;
 }
 
-/* ========== Light Mode Styling ========== */
-body.light-mode {
-    background-color: #b9b9b9;
-    color: #333;
-}
-
-body.light-mode header {
-    background-color: #e0e0e0;
-}
-
-body.light-mode h1 {
-    background-color: #acacac;
-    color: #333;
-}
-
-body.light-mode h2 {
-    color: #333;
-}
-
-body.light-mode section {
-    background-color: #d3d3d3;
-    color: #333;
-}
-
-body.light-mode a {
-    color: #b744ec;
-    text-decoration: none;
-}
-
-body.light-mode a:hover {
-    color: #920692; /* Highlight color on hover */
-    text-decoration: underline;
-}
-
-body.light-mode nav {
-    background-color: #acacac;
-}
-
-body.light-mode nav ul li a {
-    color: #333;
-}
-
-body.light-mode nav ul li a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-body.light-mode footer {
-    background-color: #acacac;
-    color: #333;
-}
-
-body.light-mode .dropdown-toggle {
-    color: #e0e0e0;
-    background-color: #7e7e7e;
-}
-
-body.light-mode .dropdown-content {
-    background-color: #d3d3d3; /* Light background for dropdown */
-}
-
-body.light-mode .dropdown-content a {
-    color: #333; /* Dark text for links */
-}
-
-body.light-mode .dropdown-content a:hover {
-    background-color: #333; /* Darker background on hover */
-    color: #fff; /* White text on hover */
-}
-
-body.light-mode #hero {
-    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url('your-photo.jpg') center/cover no-repeat;
-    color: #333; /* Dark text for contrast */
-}
-
-body.light-mode .hero-image {
-    filter: brightness(1.2); /* Lighten the image for better readability in light mode */
-}
-
-body.light-mode .btn {
-    background-color: #ff8838; /* Darker button background for light mode */
-    color: #fff;
-}
-
-body.light-mode .btn:hover {
-    background-color: rgb(163, 75, 23); /* Slightly lighter shade on hover */
-    color: #c7c7c7;
-}
-
-body.light-mode .level {
-    background-color: #c469c4;;
-}
-
-body.light-mode strong {
-    color: #202020;;
-}
-
 
 /* ========== Hero Section Styling ========== */
 #hero {
@@ -281,7 +199,7 @@ body.light-mode strong {
     justify-content: center;
     text-align: center;
     padding: 3rem 1rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('your-photo.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75)), url('assets/Hero\ Picture.png') center/cover no-repeat;
     height: 60vh; /* Adjust the height as needed */
     color: #ffffff; /* White text for contrast */
     overflow: hidden;
@@ -298,6 +216,7 @@ body.light-mode strong {
     top: 0;
     left: 0;
     z-index: -1; /* Ensure the image stays behind the text */
+    transition: all 0.5s ease;
 }
 
 .hero-content {
@@ -343,10 +262,397 @@ body.light-mode strong {
     text-align: right;
     padding-right: 0.625rem;
     border-radius: 0.325rem;
-    transition: width 1s ease; /* Smooth animation effect */
+    transition: all 0.5s ease;
+}
+
+
+
+/* ========== Projects Section ========== */
+.projects-section {
+    padding: 2rem;
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+}
+
+body.light-mode .projects-section {
+    background-color: #d3d3d3;
+    color: #333;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    background-color: #2a2a2a;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+body.light-mode .project-card {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.6);
+}
+
+body.light-mode .project-card:hover {
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.project-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+
+.project-content {
+    padding: 1rem;
+}
+
+.project-content h3 {
+    margin-top: 0;
+    color: #ff8838;
+}
+
+body.light-mode .project-content h3 {
+    color: #7400aa;
+}
+
+.project-content p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0.5rem 0;
+}
+
+body.light-mode .project-content p {
+    color: #444;
+}
+
+.project-content .btn:hover {
+    background-color: #660066;
+    color: #c7c7c7;
+}
+
+body.light-mode .project-content .btn {
+    background-color: #ff8838;
+    color: #fff;
+}
+
+body.light-mode .project-content .btn:hover {
+    background-color: #d25e00;
+    color: #fff;
+}
+
+/*==========  About Section ========== */
+.about {
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.about h2 {
+    color: #ff8838;
+    margin-bottom: 1rem;
+}
+
+.about p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+body.light-mode .about {
+    background-color: #d3d3d3;
+}
+
+body.light-mode .about h2 {
+    color: #aa00aa;
+}
+
+body.light-mode .about p {
+    color: #333;
+}
+
+.about a {
+    color: #a666b9;
+}
+
+.about a:hover {
+    color: #660066;
+}
+
+body.light-mode .about a {
+    color: #cf5300;
+}
+
+body.light-mode .about a:hover {
+    color: #6d2c00;
+}
+
+/* Resume Section */
+.about-resume {
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-resume h2 {
+    color: #ff8838;
+    margin-bottom: 1rem;
+}
+
+.about-resume p {
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Button Styling */
+.about-resume .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #a666b9;
+    color: #fff;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.about-resume .btn:hover {
+    background-color: #660066;
+    transform: translateY(-3px);
+}
+
+/* Light Mode Support */
+body.light-mode .about-resume {
+    background-color: #d3d3d3;
+}
+
+body.light-mode .about-resume h2 {
+    color: #c04dc0;
+}
+
+body.light-mode .about-resume p {
+    color: #333;
+}
+
+body.light-mode .about-resume .btn {
+    background-color: #ff8838;
+}
+
+body.light-mode .about-resume .btn:hover {
+    background-color: #d25e00;
+}
+
+
+/* Extras Page Intro Section */
+.extras-intro {
+    padding: 2rem;
+    background-color: #1e1e1e;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.extras-intro h2 {
+    color: #ff8838;
+}
+
+.extras-intro p {
+    line-height: 1.6;
+}
+
+/* Extras Content Section */
+.extras-content {
+    padding: 2rem;
+    background-color: #2a2a2a;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.extras-content h2 {
+    color: #a666b9;
+}
+
+.extras-content p {
+    line-height: 1.6;
+}
+
+.extras-content blockquote {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #444;
+    border-left: 5px solid #ff8838;
+    color: #e0e0e0;
+    font-style: italic;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .extras-intro {
+    background-color: #d3d3d3;
+}
+
+body.light-mode .extras-content {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .extras-content h2 {
+    color: #ff8838;
+}
+
+body.light-mode .extras-content blockquote {
+    background-color: #e6e6e6;
+    border-left: 5px solid #c04dc0;
+    color: #333;
+}
+
+/* YouTube Video Grid */
+.youtube-video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+/* Video Card Styling */
+.video-card {
+    background-color: #2a2a2a;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-card h3 {
+    color: #ff8838;
+    font-size: 1.1rem;
+    margin-top: 0.75rem;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+/* Light Mode Adjustments */
+body.light-mode .video-card {
+    background-color: #f0f0f0;
+}
+
+body.light-mode .video-card h3 {
+    color: #c04dc0;
+}
+
+/* ========== General Light Mode Styling ========== */
+body.light-mode {
+    background-color: #b9b9b9;
+    color: #333;
+}
+
+body.light-mode header {
+    background-color: #e0e0e0;
+}
+
+body.light-mode h1 {
+    background-color: #acacac;
+    color: #333;
+}
+
+body.light-mode h2 {
+    color: #333;
+}
+
+body.light-mode section {
+    background-color: #d3d3d3;
+    color: #333;
+}
+
+body.light-mode a {
+    color: #7400aa;
+    text-decoration: none;
+}
+
+body.light-mode a:hover {
+    color: #b304b3;
+}
+
+body.light-mode nav {
+    background-color: #acacac;
+}
+
+body.light-mode nav ul li a {
+    color: #333;
+}
+
+body.light-mode nav ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode footer {
+    background-color: #acacac;
+    color: #333;
+}
+
+body.light-mode .dropdown-toggle {
+    color: #e0e0e0;
+    background-color: #7e7e7e;
+}
+
+body.light-mode .dropdown-content {
+    background-color: #d3d3d3;
+}
+
+body.light-mode .dropdown-content a {
+    color: #333;
+}
+
+body.light-mode .dropdown-content a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+body.light-mode #hero {
+    background: linear-gradient(rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.75)), url('assets/Hero\ Picture.png') center/cover no-repeat;
+    color: #333; /* Dark text for contrast */
+}
+
+body.light-mode .hero-image {
+    filter: brightness(1);
+}
+
+body.light-mode .btn {
+    background-color: #ff8838;
+    color: #fff;
+}
+
+body.light-mode .btn:hover {
+    background-color: rgb(163, 75, 23);
+    color: #c7c7c7;
+}
+
+body.light-mode .level {
+    background-color: #7400aa;
+}
+
+body.light-mode strong {
+    color: #202020;;
 }
 
 /* ========== Miscellaneous Styling ========== */
+
+
+body, header, nav, section, footer, .btn, .project-card, .dropdown-content {
+    transition: background-color 0.5s ease, color 0.5s ease, border-color 0.5s ease;
+}
 
 /*Scrollbar style For Chrome, Safari, and Edge */
 ::-webkit-scrollbar {

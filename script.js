@@ -2,13 +2,19 @@
 // This section handles toggling between light mode and dark mode on the website
 // by adding or removing the 'light-mode' class to the <body> element.
 const themeToggle = document.getElementById('theme-toggle');
+const body = document.body;
 
-// Listen for a click event on the 'theme-toggle' button.
+// Toggle theme and save preference
 themeToggle.addEventListener('click', () => {
-    // Toggle the 'light-mode' class on the <body> element.
-    // If 'light-mode' is already applied, it will be removed; otherwise, it will be added.
-    document.body.classList.toggle('light-mode');
+    body.classList.toggle('light-mode');
+    const theme = body.classList.contains('light-mode') ? 'light' : 'dark';
+    localStorage.setItem('theme', theme);
 });
+
+// Load the saved theme from localStorage (if any)
+if (localStorage.getItem('theme') === 'light') {
+    body.classList.add('light-mode');
+}
 
 // Smooth Scrolling
 // This section adds smooth scrolling behavior when navigation links are clicked.
@@ -39,3 +45,43 @@ scrollToTopBtn.addEventListener("click", (e) => {
         behavior: "smooth" // Enables smooth scrolling animation to the top.
     });
 });
+
+
+// YouTube API Configuration
+const apiKey = 'AIzaSyDXd2Q113ujshXqIcbhOgRPCk7xs3KcVrU'; // Replace with your API key
+const channelId = 'UC9hPxk8S_01h19WmUAQgtZA';   // Replace with your Channel ID
+const maxResults = 2;                  // Number of videos to display
+const videoContainer = document.getElementById('youtube-videos');
+
+// Function to Fetch and Display Latest YouTube Videos
+async function fetchYouTubeVideos() {
+    try {
+        const response = await fetch(`https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=snippet,id&order=date&maxResults=${maxResults}`);
+        const data = await response.json();
+
+        if (data.items && videoContainer) {
+            data.items.forEach(item => {
+                if (item.id.kind === 'youtube#video') {
+                    const videoElement = document.createElement('div');
+                    videoElement.classList.add('video-card');
+                    videoElement.innerHTML = `
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/${item.id.videoId}" 
+                            title="${item.snippet.title}" frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        </iframe>
+                        <h3>${item.snippet.title}</h3>
+                    `;
+                    videoContainer.appendChild(videoElement);
+                }
+            });
+        } else {
+            videoContainer.innerHTML = `<p>No videos found.</p>`;
+        }
+    } catch (error) {
+        console.error('Failed to fetch YouTube videos:', error);
+        videoContainer.innerHTML = `<p>Error loading videos. Please try again later.</p>`;
+    }
+}
+
+// Trigger the fetch on page load
+document.addEventListener('DOMContentLoaded', fetchYouTubeVideos);
