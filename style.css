@@ -520,18 +520,23 @@ body.light-mode .extras-content blockquote {
 /* YouTube Videos Section */
 .youtube-video-grid {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
-    margin-top: 1rem;
 }
 
+
 .video-card {
+    flex: 1 1 45%;
+    max-width: 50%;
+    min-width: 0;
     background-color: #2a2a2a;
     padding: 1rem;
     border-radius: 0.5rem;
     box-shadow: 0 4px 8px rgba(0,0,0,0.5);
     transition: transform 0.3s ease;
 }
+
 
 .video-card:hover {
     transform: translateY(-5px);
@@ -722,4 +727,9 @@ body.light-mode ::-webkit-scrollbar-thumb:hover {
     .youtube-video-grid {
         flex-direction: column;
     }
+
+    .video-card {
+        max-width: 100%;
+    }
 }
+

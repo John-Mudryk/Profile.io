@@ -47,61 +47,65 @@ scrollToTopBtn.addEventListener("click", (e) => {
 });
 
 
-// YouTube API Configuration
-const apiKey = 'AIzaSyDXd2Q113ujshXqIcbhOgRPCk7xs3KcVrU'; // Replace with your API key
-const channelId = 'UC9hPxk8S_01h19WmUAQgtZA';   // Replace with your Channel ID
-const maxResults = 2;                  // Number of videos to display
-const videoContainer = document.getElementById('youtube-videos');
 
-// Function to Fetch and Display Latest YouTube Videos
-// Fetch the latest video IDs
-async function fetchLatestVideoIds() {
-    const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=id&order=date&maxResults=${maxResults}`;
-    const response = await fetch(searchUrl);
-    const data = await response.json();
-    return data.items
-        .filter(item => item.id.kind === 'youtube#video')
-        .map(item => item.id.videoId);
-}
 
-// Fetch detailed info about the videos
-async function fetchVideoDetails(videoIds) {
-    const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?key=${apiKey}&id=${videoIds.join(',')}&part=snippet,contentDetails`;
-    const response = await fetch(detailsUrl);
-    return await response.json();
-}
+// Free API ran out. No longer in use for now vvvv
 
-// Render the videos on the page
-async function renderYouTubeVideos() {
-    try {
-        const videoIds = await fetchLatestVideoIds();
+// // YouTube API Configuration
+// const apiKey = 'AIzaSyDXd2Q113ujshXqIcbhOgRPCk7xs3KcVrU'; // Replace with your API key
+// const channelId = 'UC9hPxk8S_01h19WmUAQgtZA';   // Replace with your Channel ID
+// const maxResults = 2;                  // Number of videos to display
+// const videoContainer = document.getElementById('youtube-videos');
+
+// // Function to Fetch and Display Latest YouTube Videos
+// // Fetch the latest video IDs
+// async function fetchLatestVideoIds() {
+//     const searchUrl = `https://www.googleapis.com/youtube/v3/search?key=${apiKey}&channelId=${channelId}&part=id&order=date&maxResults=${maxResults}`;
+//     const response = await fetch(searchUrl);
+//     const data = await response.json();
+//     return data.items
+//         .filter(item => item.id.kind === 'youtube#video')
+//         .map(item => item.id.videoId);
+// }
+
+// // Fetch detailed info about the videos
+// async function fetchVideoDetails(videoIds) {
+//     const detailsUrl = `https://www.googleapis.com/youtube/v3/videos?key=${apiKey}&id=${videoIds.join(',')}&part=snippet,contentDetails`;
+//     const response = await fetch(detailsUrl);
+//     return await response.json();
+// }
+
+// // Render the videos on the page
+// async function renderYouTubeVideos() {
+//     try {
+//         const videoIds = await fetchLatestVideoIds();
         
-        if (videoIds.length === 0) {
-            videoContainer.innerHTML = `<p>No recent videos found.</p>`;
-            return;
-        }
+//         if (videoIds.length === 0) {
+//             videoContainer.innerHTML = `<p>No recent videos found.</p>`;
+//             return;
+//         }
 
-        const videoDetails = await fetchVideoDetails(videoIds);
-        videoDetails.items.forEach(item => {
-            const videoElement = document.createElement('div');
-            videoElement.classList.add('video-card');
-            videoElement.innerHTML = `
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/${item.id}" 
-                        title="${item.snippet.title}" frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-                <h3>${item.snippet.title}</h3>
-                <p>${item.snippet.description.substring(0, 100)}...</p>
-            `;
-            videoContainer.appendChild(videoElement);
-        });
-    } catch (error) {
-        console.error('Failed to fetch YouTube videos:', error);
-        videoContainer.innerHTML = `<p>Error loading videos. Please try again later.</p>`;
-    }
-}
+//         const videoDetails = await fetchVideoDetails(videoIds);
+//         videoDetails.items.forEach(item => {
+//             const videoElement = document.createElement('div');
+//             videoElement.classList.add('video-card');
+//             videoElement.innerHTML = `
+//                 <div class="video-wrapper">
+//                     <iframe src="https://www.youtube.com/embed/${item.id}" 
+//                         title="${item.snippet.title}" frameborder="0" 
+//                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+//                         allowfullscreen>
+//                     </iframe>
+//                 </div>
+//                 <h3>${item.snippet.title}</h3>
+//                 <p>${item.snippet.description.substring(0, 100)}...</p>
+//             `;
+//             videoContainer.appendChild(videoElement);
+//         });
+//     } catch (error) {
+//         console.error('Failed to fetch YouTube videos:', error);
+//         videoContainer.innerHTML = `<p>Error loading videos. Please try again later.</p>`;
+//     }
+// }
 
-document.addEventListener('DOMContentLoaded', renderYouTubeVideos);
+// document.addEventListener('DOMContentLoaded', renderYouTubeVideos);
